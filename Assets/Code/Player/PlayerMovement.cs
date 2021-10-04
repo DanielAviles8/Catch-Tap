@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(keyboard.aKey.wasPressedThisFrame)
         {
-            Player.transform.rotation = Player.transform.rotation * Quaternion.AngleAxis(-45f, rotationDirection);
+            Player.transform.rotation = Player.transform.rotation * Quaternion.AngleAxis(90f, rotationDirection);
             print("izquierda");
         }
     }
