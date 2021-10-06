@@ -7,6 +7,8 @@ TagManager:
   - RedArrow
   - RedPlayer
   - BlueArrow
+  - GreenArrow
+  - YellowArrow
   layers:
   - Default
   - TransparentFX

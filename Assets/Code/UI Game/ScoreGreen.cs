@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreBlue : MonoBehaviour
+public class ScoreGreen : MonoBehaviour
 {
-    void OnCollisionEnter(Collision blue)
+    void OnCollisionEnter(Collision green)
     {
-        if(blue.gameObject.CompareTag("BlueArrow"))
+        if(green.gameObject.CompareTag("GreenArrow"))
         {
             Score.MeshScore = Score.MeshScore + 1;
             print(Score.MeshScore + " actual");        
         }
-        Destroy(blue.gameObject, 0);
+        Destroy(green.gameObject, 0);
     }
 }

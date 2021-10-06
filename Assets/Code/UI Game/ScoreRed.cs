@@ -16,5 +16,6 @@ public class ScoreRed : MonoBehaviour
             Score.MeshScore = Score.MeshScore + 1;
             print(Score.MeshScore + " actual");
         }
+        Destroy(other.gameObject, 0);
     }
 }
