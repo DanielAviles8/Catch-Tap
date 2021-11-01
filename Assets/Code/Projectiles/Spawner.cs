@@ -34,6 +34,6 @@ public class Spawner : MonoBehaviour
         newArrow.transform.position = inicialPos;
         newArrow.transform.rotation = this.transform.rotation;
         newArrow.GetComponent<Rigidbody>().velocity = transform.up * speed;
-        waitTime = Random.Range(1, 3);
+        waitTime = Random.Range(1, 10);
     }
 }

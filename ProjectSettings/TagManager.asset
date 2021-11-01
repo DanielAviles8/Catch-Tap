@@ -9,6 +9,8 @@ TagManager:
   - BlueArrow
   - GreenArrow
   - YellowArrow
+  - Ball
+  - Brick
   layers:
   - Default
   - TransparentFX

@@ -2,63 +2,56 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerSlide : MonoBehaviour
 {
     public GameObject Player;
     public UnityEvent OnPrepare;
     public bool Active
     {
-        get{return active;}
-        set{active = value;}
+        get{ return active; }
+        set{ active = value; } 
     }
-
     Keyboard keyboard;
     CharacterController characterController;
 
     private bool active;
-    public Vector3 rotationDirection;
-
-
     void Prepare()
     {
         #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         keyboard = Keyboard.current;
         #endif
         characterController = GetComponent<CharacterController>();
-            active = true;
-            if(OnPrepare != null)
-            {
-                OnPrepare.Invoke();
-            }
+        active = true;
+        if (OnPrepare != null)
+        {
+            OnPrepare.Invoke();
+        }
     }
-
     public void Start()
     {
         Prepare();
     }
-
     void Update()
     {
-        if(active)
+        if (active)
         {
             if(keyboard != null)
             {
                 CheckInputKeyBoard();
             }
-        }
+        } 
     }
-
     void CheckInputKeyBoard()
     {
-        if(keyboard.dKey.wasPressedThisFrame)
+        Vector3 distance = Player.transform.position;
+        print(distance);
+        if (keyboard.dKey.isPressed)
         {
-            Player.transform.rotation = Player.transform.rotation * Quaternion.AngleAxis(90f, rotationDirection);
-            print("derecha");
+             Player.transform.Translate(0.05f, 0, 0);
         }
-        if(keyboard.aKey.wasPressedThisFrame)
+        if (keyboard.aKey.isPressed)
         {
-            Player.transform.rotation = Player.transform.rotation * Quaternion.AngleAxis(-90f, rotationDirection);
-            print("izquierda");
+                Player.transform.Translate(-0.05f, 0, 0);
         }
     }
 }
